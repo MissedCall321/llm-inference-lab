@@ -1,0 +1,13 @@
+services:
+  dev:
+    build: .
+    gpus: all
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+      - model-cache:/cache/huggingface
+    stdin_open: true
+    tty: true
+
+volumes:
+  model-cache:
